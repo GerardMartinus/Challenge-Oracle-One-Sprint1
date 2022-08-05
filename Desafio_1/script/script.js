@@ -1,5 +1,7 @@
 let texto = document.getElementById("entrada-texto1");
 let texto2 = document.getElementById("entrada-texto2");
+let conteudo1 = document.querySelector("h3");
+let conteudo2 = document.querySelector("p");
 
 let botaoCriptografar = document.getElementById("criptografar");
 let botaoDesriptografar = document.getElementById("descriptografar");
@@ -18,12 +20,15 @@ function criptografa(){
      
     let resultado = textoCriptografado
     .replaceAll("e", "enter")
-    .replace("i", "imes")
-    .replace("a", "ai")
-    .replace("o", "ober")
-    .replace("u", "ufat");
+    .replaceAll("i", "imes")
+    .replaceAll("a", "ai")
+    .replaceAll("o", "ober")
+    .replaceAll("u", "ufat");
 
     texto2.value = resultado;
+    imagem.style.display = "none";
+    conteudo1.style.display = "none";
+    conteudo2.style.display = "none";
 }
 
 function descriptografa(){
@@ -31,10 +36,10 @@ function descriptografa(){
      
     let resultado = textoCriptografado
     .replaceAll("enter", "e")
-    .replace("imes", "i")
-    .replace("ai", "a")
-    .replace("ober", "o")
-    .replace("ufat", "u");
+    .replaceAll("imes", "i")
+    .replaceAll("ai", "a")
+    .replaceAll("ober", "o")
+    .replaceAll("ufat", "u");
 
     texto2.value = resultado;
 }
@@ -47,14 +52,10 @@ function copiar(){
 
 }
 
-// if (texto2 = false){
-//     imagem.style.display = "none";
-// } else {
-//     imagem.style.display = "block";
-// }
+let carateres = texto2.length;
 
-if (texto2.value == true){
-    imagem.style.display = "none";
+if (carateres >= 1){
+    
 } else {
     imagem.style.display = "block";
 }
